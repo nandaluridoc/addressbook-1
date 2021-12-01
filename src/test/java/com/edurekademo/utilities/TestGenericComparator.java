@@ -90,8 +90,8 @@ public class TestGenericComparator
      */
     public void testSortEmpNameAsc() {
             ArrayList myData = new ArrayList(); initialize(myData);
-            Collections.sort(myData, new GenericComparator("empName1", true)); // sort ascending.. 
-            assertEquals("Asma", ((UnitDTO)myData.get(0)).getEmpName()); 
+            Collections.sort(myData, new GenericComparator("empName", true)); // sort ascending.. 
+            assertEquals("Asma", ((UnitDTO)myData.get(0)).getEmpName1()); 
     }
 
     /**
