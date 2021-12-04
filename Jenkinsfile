@@ -2,6 +2,16 @@ pipeline {
     agent any
     
     stages {
+        stage("COMPILE"){
+            agent {label 'linux_slave'}
+            steps{
+                script{
+                    echo "Compiling the code"
+                    sh 'mvn compile'
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
