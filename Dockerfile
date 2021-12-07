@@ -6,7 +6,7 @@ RUN mvn dependency:go-offline
 
 
 COPY . ./
-RUN mvn spring-javaformat:apply
+
 RUN mvn package -DfinalName=addressbook
 
 FROM openjdk:8-jre-alpine
