@@ -20,8 +20,8 @@ pipeline {
             steps {
 
                 script {
-
-                    dockerImage = docker.build "chakrapanin/addressbooko:$BUILD_NUMBER"
+                    dockerImage = docker.build "chakrapanin/addressbooko:latest"
+                    //dockerImage = docker.build "chakrapanin/addressbooko:$BUILD_NUMBER"
 
                 }
 
