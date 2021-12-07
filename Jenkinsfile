@@ -2,7 +2,7 @@ pipeline {
 2
     agent {
 3
-        label 'docker'
+        label 'slave01'
 4
     }
 5
