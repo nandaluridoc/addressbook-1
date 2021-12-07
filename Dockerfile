@@ -14,4 +14,4 @@ EXPOSE 8080
 WORKDIR /app
 
 COPY --from=build-env /app/target/addressbook.war ./addressbook.war
-CMD ["/usr/bin/java", "-jar", "/app/petclinic.war"]
+CMD ["/usr/bin/java", "-jar", "/app/addressbook.war"]
