@@ -9,13 +9,14 @@ pipeline {
     {
        maven "Maven"
     }
+    stages {
     stage('Execute Maven') {
            steps {
              
                 sh 'mvn package'             
           }
         }
-    stages {
+    
 
         stage('Building our image') {
 
