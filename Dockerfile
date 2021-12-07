@@ -9,7 +9,7 @@ COPY . ./
 
 RUN mvn package -DfinalName=addressbook
 
-FROM openjdk:8-jre-alpine
+FROM FROM openjdk:11
 EXPOSE 8080
 WORKDIR /app
 
