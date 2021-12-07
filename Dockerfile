@@ -13,5 +13,9 @@ FROM openjdk:11
 EXPOSE 8080
 WORKDIR /app
 
+FROM tomcat
+WORKDIR /usr/local/tomcat/webapps/
+COPY ROOT.war /usr/local/tomcat/webapps/
+
 COPY --from=build-env /app/target/addressbook.war ./addressbook.war
-CMD ["/usr/bin/java", "-jar", "/app/addressbook.war"]
+
