@@ -5,7 +5,16 @@ pipeline {
         label 'slave01'
 
     }
-
+ tools
+    {
+       maven "Maven"
+    }
+    stage('Execute Maven') {
+           steps {
+             
+                sh 'mvn package'             
+          }
+        }
     stages {
 
         stage('Building our image') {
