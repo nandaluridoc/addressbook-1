@@ -1,9 +1,5 @@
-FROM tomcat:latest
-
-LABEL maintainer="Nidhi Gupta"
-
-ADD ./target/addressbook.war /usr/local/tomcat/webapps/
-
+FROM tomcat:8.5.35-jre10
+ADD addressbook.war /usr/local/tomcat/webapps/
 EXPOSE 8080
-
-CMD ["catalina.sh", "run"]
+CMD chmod +x /usr/local/tomcat/bin/catalina.sh
+CMD ["catalina.sh", "run"]]
