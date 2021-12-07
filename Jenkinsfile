@@ -14,7 +14,7 @@ pipeline {
 
                 script {
 
-                    dockerImage = docker.build "chakrapanin/addressbook:$BUILD_NUMBER"
+                    dockerImage = docker.build "chakrapanin/addressbooko:$BUILD_NUMBER"
 
                 }
 
