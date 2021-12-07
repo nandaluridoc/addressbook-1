@@ -1,32 +1,47 @@
 pipeline {
-    agent any
-    
-    stages {
-        stage("COMPILE"){
-            agent {label 'slave01'}
-            steps{
-                script{
-                    echo "Compiling the code"
-                    sh 'mvn compile'
-                }
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        
+2
+    agent {
+3
+        label 'docker'
+4
     }
+5
+    stages {
+6
+        stage('Building our image') {
+7
+            steps {
+8
+                script {
+9
+                    dockerImage = docker.build "chakrapanin/addressbook:$BUILD_NUMBER"
+10
+                }
+11
+            }
+12
+        }
+13
+        stage('Deploy our image') {
+14
+            steps {
+15
+                script {
+16
+                    // Assume the Docker Hub registry by passing an empty string as the first parameter
+17
+                    docker.withRegistry('' , 'dockerhub') {
+18
+                        dockerImage.push()
+19
+                    }
+20
+                }
+21
+            }
+22
+        }
+23
+    }
+24
 }
