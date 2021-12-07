@@ -5,10 +5,7 @@ pipeline {
         label 'slave01'
 
     }
- tools
-    {
-       maven "Maven"
-    }
+ 
     stages {
     stage('Execute Maven') {
            steps {
