@@ -14,4 +14,4 @@ RUN mvn package -DfinalName=addressbook
 FROM tomcat
 
 
-COPY addressbook.war /usr/local/tomcat/webapps
+COPY /app/target/addressbook.war /usr/local/tomcat/webapps
