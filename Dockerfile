@@ -15,7 +15,7 @@ WORKDIR /app
 
 FROM tomcat
 WORKDIR /usr/local/tomcat/webapps/
-COPY ROOT.war /usr/local/tomcat/webapps/
+COPY addressbook.war /usr/local/tomcat/webapps/
 
 COPY --from=build-env /app/target/addressbook.war ./addressbook.war
 
