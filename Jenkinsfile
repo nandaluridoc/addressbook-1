@@ -51,7 +51,7 @@ stage('Orchestrate')
 {
     steps{
         kubernetesDeploy(
-                    configs: 'addressbook.yaml',
+                    configs: '$workspace/addressbook.yaml',
                     kubeconfigId: 'K8S',
                     enableConfigSubstitution: false
                     )        
