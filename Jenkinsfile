@@ -47,14 +47,14 @@ pipeline {
 
             }
              }
-stage ('K8S Deploy') {
-       
-                kubernetesDeploy(
-                    configs: 'addressbook.yaml',
-                    kubeconfigId: 'K8S',
-                    enableConfigSubstitution: true
-                    )               
+stage('Orchestrate')
+{
+    steps{
+        script{
+    sh 'kubectl apply -f demo.yaml'
         }
+    }
+}
         }
 
     }
