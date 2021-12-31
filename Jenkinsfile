@@ -46,7 +46,14 @@ pipeline {
                 }
 
             }
-
+stage ('K8S Deploy') {
+       
+                kubernetesDeploy(
+                    configs: 'addressbook.yaml',
+                    kubeconfigId: 'K8S',
+                    enableConfigSubstitution: true
+                    )               
+        }
         }
 
     }
