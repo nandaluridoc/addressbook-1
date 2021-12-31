@@ -46,6 +46,7 @@ pipeline {
                 }
 
             }
+             }
 stage ('K8S Deploy') {
        
                 kubernetesDeploy(
@@ -58,5 +59,5 @@ stage ('K8S Deploy') {
 
     }
 
-}
+
 
