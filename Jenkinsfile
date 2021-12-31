@@ -53,7 +53,7 @@ stage('Orchestrate')
         kubernetesDeploy(
                     configs: 'addressbook.yaml',
                     kubeconfigId: 'K8S',
-                    enableConfigSubstitution: true
+                    enableConfigSubstitution: false
                     )        
     }
 }
