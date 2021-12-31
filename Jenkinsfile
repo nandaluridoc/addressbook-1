@@ -50,9 +50,11 @@ pipeline {
 stage('Orchestrate')
 {
     steps{
-        script{
-    sh 'kubectl apply -f addressbook.yaml'
-        }
+        kubernetesDeploy(
+                    configs: 'MyAwesomeApp/springboot-lb.yaml',
+                    kubeconfigId: 'K8S',
+                    enableConfigSubstitution: true
+                    )        
     }
 }
         }
