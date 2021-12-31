@@ -51,7 +51,7 @@ stage('Orchestrate')
 {
     steps{
         kubernetesDeploy(
-                    configs: 'MyAwesomeApp/springboot-lb.yaml',
+                    configs: 'addressbook.yaml',
                     kubeconfigId: 'K8S',
                     enableConfigSubstitution: true
                     )        
