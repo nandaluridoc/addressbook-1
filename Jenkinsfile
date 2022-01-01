@@ -47,16 +47,13 @@ pipeline {
 
             }
              }
-stage('Orchestrate')
-{
-    steps{
-        kubernetesDeploy(
-                    configs: 'addressbook.yaml',
-                    kubeconfigId: 'K8S',
-                    enableConfigSubstitution: false
-                    )        
+ stage('Deploying App to Kubernetes') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "addressbook.yaml", kubeconfigId: "K8S")
+        }
+      }
     }
-}
         }
 
     }
